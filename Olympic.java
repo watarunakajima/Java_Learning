@@ -9,7 +9,7 @@ public class Olympic{
 
         sc.close;
 
-        int [] olympic_list = new int[32];
+        int olympic_list = new int[32];
         int year;
         for(int i = 0; i > 32; i++){
             olympic_list[i] = 1896 + 4 * i;
