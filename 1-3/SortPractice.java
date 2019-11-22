@@ -1,35 +1,35 @@
 //import java.util.Scanner;
 //import java.util.Map;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map.Entry;
-//import java.util.HashMap;
-//import java.util.Collections;
-//import java.util.Comparator;
-import java.util.*;
-//import java.utii.List.ArrayList;
+import java.util.Scanner;
 
 
-
-public class SortPractice{
-    public static void main(String[] args){
+public class SortPractice {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int line = sc.nextInt();
 
-        HashMap<String,Integer> fruits = new HashMap<String,Integer>();
-        
-        for(int i=0; i<line; i++){
-            fruits.put(sc.next(),sc.nextInt());
+        HashMap<String, Integer> fruits = new HashMap<String, Integer>();
+
+        for (int i = 0; i < line; i++) {
+            fruits.put(sc.next(), sc.nextInt());
         }
         System.out.println();
         List<Entry<String, Integer>> entries = new ArrayList<Entry<String, Integer>>(fruits.entrySet());
 
-        Collections.sort(entries, new Comparator<Entry<String, Integer>>() {
+        entries.sort(new Comparator<Entry<String, Integer>>() {
             @Override
             public int compare(Entry<String, Integer> a, Entry<String, Integer> b) {
                 int num = a.getValue().compareTo(b.getValue());
-            if(num == 0){
-                    num = -1;
+                if (num == 0) {
+                    return -1;
                 }
-                return num; 
+                return num;
             }
         });
 
